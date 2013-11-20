@@ -71,7 +71,7 @@ DAT.Globe = function(container, colorFn) {
 
   var overRenderer;
 
-  var imgDir = './active-users-globe/img/';
+  var imgDir = './img/';
 
   var curZoomSpeed = 0;
   var zoomSpeed = 50;
@@ -185,7 +185,6 @@ DAT.Globe = function(container, colorFn) {
     opts.animated = opts.animated || false;
     this.is_animated = opts.animated;
     opts.format = opts.format || 'magnitude'; // other option is 'legend'
-    console.log(opts.format);
     if (opts.format === 'magnitude') {
       step = 3;
       colorFnWrapper = function(data, i) { return colorFn(data[i+2]); }
@@ -244,7 +243,6 @@ DAT.Globe = function(container, colorFn) {
         if (this._baseGeometry.morphTargets.length < 8) {
           console.log('t l',this._baseGeometry.morphTargets.length);
           var padding = 8-this._baseGeometry.morphTargets.length;
-          console.log('padding', padding);
           for(var i=0; i<=padding; i++) {
             console.log('padding',i);
             this._baseGeometry.morphTargets.push({'name': 'morphPadding'+i, vertices: this._baseGeometry.vertices});
